@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Musikuy</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Musikuy</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Musikuy</h1>
+        <p>Organiza tu dinero y alcanza tus metas.</p>
+    </header>
+
+
+    <main>
+
+        <section class="tarjeta">
+
+            <h2>Mi meta de ahorro</h2>
+
+            <label for="meta">
+                ¿Cuánto quieres ahorrar?
+            </label>
+
+            <input
+                id="meta"
+                type="number"
+                placeholder="Ej. 100"
+                min="0"
+                step="0.01"
+            >
+
+
+            <label for="actual">
+                ¿Cuánto tienes actualmente?
+            </label>
+
+            <input
+                id="actual"
+                type="number"
+                placeholder="Ej. 20"
+                min="0"
+                step="0.01"
+            >
+
+            <label for="semanas">
+                ¿En cuántas semanas?
+            </label>
+
+            <input
+                id="semanas"
+                type="number"
+                placeholder="Ej. 8"
+                min="1"
+            >
+
+            <button id="botonCalcular">
+                Calcular mi ahorro
+            </button>
+
+
+            <p id="resultado"></p>
+
+
+            <div class="barra">
+                <div id="progreso"></div>
+            </div>
+
+
+            <p id="porcentaje"></p>
+
+        </section>
+
+        <section class="tarjeta">
+
+            <h2>Mis gastos</h2>
+
+
+            <label for="nombreGasto">
+                ¿En qué gastaste?
+            </label>
+
+            <input
+                id="nombreGasto"
+                type="text"
+                placeholder="Ej. Pasaje"
+            >
+
+
+            <label for="montoGasto">
+                ¿Cuánto gastaste?
+            </label>
+
+            <input
+                id="montoGasto"
+                type="number"
+                placeholder="Ej. 2.50"
+                min="0"
+                step="0.01"
+            >
+
+            <button id="botonGasto">
+                Agregar gasto
+            </button>
+
+            <div id="listaGastos"></div>
+            <p id="totalGastos"></p>
+            <p id="promedioGastos"></p>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
