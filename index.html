@@ -96,7 +96,15 @@
                 type="text"
                 placeholder="Ej. Pasaje"
             >
+            <label for="categoria">Categoría</label>
 
+            <select id="categoria">
+              <option value="Transporte">Transporte</option>
+              <option value="Comida">Comida</option>
+              <option value="Estudios">Estudios</option>
+              <option value="Entretenimiento">Entretenimiento</option>
+              <option value="Otros">Otros</option>
+</select>
 
             <label for="montoGasto">
                 ¿Cuánto gastaste?
@@ -117,9 +125,19 @@
             <div id="listaGastos"></div>
             <p id="totalGastos"></p>
             <p id="promedioGastos"></p>
-
+            <div id="grafico"></div>
         </section>
+<section class="tarjeta tarjeta-consejo">
+    <h2> Consejo para ti</h2>
+    <p id="consejo">
+        Registra tus gastos para descubrir en qué puedes ahorrar.
+    </p>
 
+    <div class="reto">
+        <h3>Reto semanal</h3>
+        <p>Intenta guardar S/ 5 extra esta semana.</p>
+    </div>
+</section>
     </main>
 
     <script src="script.js"></script>
