@@ -142,3 +142,57 @@ button:hover {
 #promedioGastos {
     font-weight: bold;
 }
+select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+}
+
+#grafico {
+    margin-top: 20px;
+}
+
+.barra-categoria {
+    margin-top: 12px;
+}
+
+.barra-categoria p {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 5px;
+    font-size: 14px;
+}
+
+.fondo-categoria {
+    height: 12px;
+    background-color: #f5eeda;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.relleno-categoria {
+    height: 100%;
+    background-color: #f2a900;
+    border-radius: 20px;
+}
+
+.tarjeta-consejo {
+    border-top: 5px solid #f2a900;
+}
+
+.reto {
+    margin-top: 18px;
+    padding: 15px;
+    border-left: 5px solid #f2a900;
+    border-radius: 8px;
+    background-color: #f5eeda;
+}
+
+.reto h3 {
+    margin-top: 0;
+    color: #6b2009;
+}
