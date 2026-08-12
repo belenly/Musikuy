@@ -102,6 +102,10 @@ function agregarGasto() {
                 "montoGasto"
             ).value
         );
+    const categoria =
+        document.getElementById(
+            "categoria"
+        ).value;
     if (
         nombre.trim() === "" ||
         monto <= 0
@@ -115,10 +119,11 @@ function agregarGasto() {
     }
     const gasto = {
 
-        nombre: nombre,
+    nombre: nombre,
 
-        monto: monto
+    monto: monto,
 
+    categoria: categoria      
     };
 
     gastos.push(gasto);
@@ -140,7 +145,6 @@ function agregarGasto() {
     ).value = "";
 }
 
-
 function mostrarGastos() {
     const lista =
         document.getElementById(
@@ -150,7 +154,7 @@ function mostrarGastos() {
     lista.innerHTML = "";
 
     let total = 0;
-
+    const categorias = {};
 
     for (
         let gasto of gastos
@@ -163,7 +167,9 @@ function mostrarGastos() {
 
         elemento.textContent =
             gasto.nombre +
-            ": S/ " +
+            " (" +
+            (gasto.categoria || "Otros") +
+            "): S/ " +
             gasto.monto.toFixed(2);
 
         lista.appendChild(
@@ -173,6 +179,12 @@ function mostrarGastos() {
         total =
             total +
             gasto.monto;
+        const categoriaActual =
+            gasto.categoria || "Otros";
+
+categorias[categoriaActual] =
+    (categorias[categoriaActual] || 0) +
+    gasto.monto;
     }
 
     document.getElementById(
@@ -202,6 +214,33 @@ function mostrarGastos() {
         ).textContent =
             "";
 
+    }
+    mostrarGrafico(categorias, total);
+    }
+    function mostrarGrafico(categorias, total) {
+    const grafico =
+        document.getElementById("grafico");
+
+    grafico.innerHTML = "";
+
+    for (let categoria in categorias) {
+        const monto = categorias[categoria];
+
+        const porcentajeCategoria =
+            (monto / total) * 100;
+
+        grafico.innerHTML +=
+            '<div class="barra-categoria">' +
+                '<p>' +
+                    '<span>' + categoria + '</span>' +
+                    '<span>S/ ' + monto.toFixed(2) + '</span>' +
+                '</p>' +
+                '<div class="fondo-categoria">' +
+                    '<div class="relleno-categoria" style="width: ' +
+                        porcentajeCategoria +
+                        '%"></div>' +
+                '</div>' +
+            '</div>';
     }
 }
 
